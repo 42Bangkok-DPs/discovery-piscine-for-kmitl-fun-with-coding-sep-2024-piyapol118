@@ -1,0 +1,28 @@
+body {
+    margin: 0; 
+    font-weight: bold; 
+    font-size: 5vw; 
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container {
+    display: flex; 
+    justify-content: center; 
+    height: 50vh;
+}
+
+.item1 {
+    background-color: palegoldenrod; 
+    flex:1; 
+    align-items: center; 
+    display: flex; 
+    border: solid;
+}
+
+.item2 {
+    background-color: rgb(151, 255, 106); 
+    flex:1; 
+    align-items: center; 
+    display: flex;
+    border: solid;
+}
