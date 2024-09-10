@@ -1,0 +1,73 @@
+    body {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-container {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        width: 24vw;
+        font-size: 2vh;
+        color: rgb(0, 0, 0);
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding-bottom: 20px;
+    }
+    .card {
+        position: relative;
+        width: 100%;
+        display: grid;
+        grid-row: 2;
+    }
+    .pic-table {
+        display: flex; 
+    }
+    .pic-table img {
+        max-width: 100%;
+        height: auto; 
+    }
+
+    .text-table {
+        background-color: rgb(255, 255, 255);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .text-table p {
+        color: rgb(139, 138, 138);
+        margin: 0;
+        padding-bottom: 20px;
+    }
+
+    .logo-wrapper {
+        display: flex;
+        flex-direction: row;
+        gap: 10px;
+    }
+    .logo-wrapper img{
+        width: 20px;
+    }
+    .contact-btn {
+        background-color: black;
+        border-radius: 0 0 10px 10px;
+        color: white;
+        border: none;
+        font-size: 1em;
+        font-weight: bold;
+        width: 24vw;
+        height: 30px;
+        transition: 0.5s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    }
+    .contact-btn:hover  {
+        background-color: gray;
+    }
