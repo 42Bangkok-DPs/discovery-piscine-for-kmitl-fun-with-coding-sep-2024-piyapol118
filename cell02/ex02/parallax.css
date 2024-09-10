@@ -1,32 +1,38 @@
 body {
     margin: 0;
+    font-family: Arial, sans-serif; /* Adding a font for better text appearance */
 }
+
 .container {
-    height: 230vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between; /* Space between items vertically */
-    background-color: black;
+    height: 230vh; /* Ensure the container is tall enough for scrolling */
 }
+
+.parallax {
+    height: 100vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.parallax1 {
+    background-image: url('https://pbs.twimg.com/ext_tw_video_thumb/1796913936656474112/pu/img/W9ZZxJtY-dhvQ9VA.jpg');
+}
+
+.parallax2 {
+    background-image: url('https://i.pinimg.com/280x280_RS/4b/cb/cf/4bcbcff6f0ecaed8a1072221536ce119.jpg');
+}
+
 .our_text {
     background-color: black;
-    height: 100vh;
+    height: 20vh;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     color: white;
 }
 
-.img-wrapper {
-    position: relative;
-    width: 100%;
-}
-
-.img-wrapper img {
-    width: 100%;
-    display: block;
-    height: 105vh;
-}
 .centered {
     position: absolute;
     top: 50%;
@@ -35,8 +41,6 @@ body {
     color: white;
     font-size: 2em;
     font-weight: bold;
-}
-.centered p {
     text-shadow: 
         -1px -1px 0 #000,  
         1px -1px 0 #000,
