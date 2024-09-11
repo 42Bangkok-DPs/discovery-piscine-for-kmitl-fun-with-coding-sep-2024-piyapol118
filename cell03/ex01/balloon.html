@@ -20,18 +20,43 @@
         </div>
 </body>
 <script>
+    let current_color = 'green'
+    const color = ['red', 'green', 'blue'];
     function balloonPumping(){
-        let current_color = 'red'
-        const color = ['red', 'green', 'blue']
+        let balloon = document.getElementById("balloon");
+
         let nextColor = (color.indexOf(current_color) + 1) % 3;
         current_color = color[nextColor];
 
-        document.getElementById("balloon").style.backgroundColor = 'blue';
+        balloon.style.backgroundColor = current_color;
+
+        
         let currentWidth = parseInt(balloon.style.width);
         let currentHeight = parseInt(balloon.style.height);
 
+        if (currentHeight + 10 > 420) {
+            currentHeight -= 230;
+            currentWidth -= 230;
+        }
         balloon.style.width = (currentWidth + 10) + "px";
         balloon.style.height = (currentHeight + 10) + "px";
+        
+        console.log(currentHeight);
     }
+    function balloonShrinking(){
+        let balloon = document.getElementById("balloon");
+        let nextColor = (color.indexOf(current_color) - 1 + color.length) % 3;
+        current_color = color[nextColor];
+        balloon.style.backgroundColor = current_color;
+
+        let currentWidth = parseInt(balloon.style.width);
+        let currentHeight = parseInt(balloon.style.height);
+
+        if (currentHeight - 5 > 200) {
+            balloon.style.width = (currentWidth - 5) + "px";
+            balloon.style.height = (currentHeight - 5) + "px";
+        } 
+    }
+    document.getElementById("balloon").addEventListener("mouseout", balloonShrinking);
 </script>
 </html>
