@@ -1,157 +1,404 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="https://kit.fontawesome.com/64c9199a72.js" crossorigin="anonymous"></script>
-    <style>
-        body {
-            margin: 0;
-            min-height: 200vh;
-            font-family: 'Courier New', Courier, monospace;
-        }
-        .navbar {
-            display: flex;
-            position: fixed;
-            align-items: center;
-            width: 100%;
-            height: 70px;
-            background-color: rgb(0, 0, 0);
-            justify-content: space-between;
-        }
-        #navtext {
-            display: flex;
-            align-self: center;
-            color: white;
-            font-size: 16px;
-            text-decoration: none;
-            transition: 0.5s;
-            padding: 26px;
-            border-radius: 5px;
-        }
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <script src="https://kit.fontawesome.com/64c9199a72.js" crossorigin="anonymous"></script>
+        <style>
+            html {
+                scroll-behavior: smooth; /* Smooth scrolling */
+            }
+            body {  
+                margin: 0;
+                min-height: 200vh;
+                min-width: 320px;
+                font-family: 'Courier New', Courier, monospace;
+                background-attachment: fixed;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-size: cover;
+                color: white;
+                background-image: url("./assetn/v856-kul-07.jpg");
+            }
+            .navbar {
+                display: flex;
+                position: fixed;
+                align-items: center;
+                width: 100%;
+                height: 70px;
+                background-color: rgb(0, 0, 0);
+                justify-content: space-between;
+            }
+            .text-shadow {
+                color: white;
+                text-shadow: 5px 5px 8px rgba(217, 217, 217, 0.7);
+            }
 
-        #navtext:hover {
-            background-color: rgb(74, 74, 74);
-        }
-        .navtext-container {
-            display: flex;
-            align-items: center;
-            padding-left: 30px;
-            padding-right: 30px;
-            height: 100%;
-        }
+            #navtext {
+                display: flex;
+                align-self: center;
+                color: white;
+                font-size: 16px;
+                text-decoration: none;
+                transition: 0.5s;
+                padding: 26px;
+                border-radius: 5px;
+            }
 
-        .home-icon {
-            line-height: 70px;
-            font-size: 20px;
-            color: white;
-            transition: 0.5s;
-            padding-left: 28px;
-            padding-right: 28px;
-            border-radius: 5px;
-        }
-
-        .home-icon:hover {
-            background-color: rgb(74, 74, 74);
-        }
-
-        .navtext-container.active {
-            display: flex;
-            flex-direction: column;
-            position: absolute;
-            top: 70px;
-            right: 0;
-            background-color: rgb(0, 0, 0);
-            width: 100%;
-            text-align: center;
-            gap: 0;
-            z-index: 1;
-        }
-        .navtext-container.active a {
-            padding: 10px 0;
-            width: 100%;
-        }
-        .hamburg {
-            display: none;
-            color: white;
-        }
-
-        @media screen and (max-width: 640px) {
+            #navtext:hover {
+                background-color: rgb(74, 74, 74);
+            }
             .navtext-container {
-                display: none;
-                flex-direction: column;
-                opacity: 0;
-                transform: translateY(-20px); 
-                transition: opacity 0.5s ease, transform 0.5s ease;
+                display: flex;
+                align-items: center;
+                padding-left: 30px;
+                padding-right: 30px;
+                height: 100%;
+            }
+
+            .home-icon {
+                line-height: 70px;
+                font-size: 20px;
+                color: white;
+                transition: 0.5s;
+                padding-left: 28px;
+                padding-right: 28px;
+                border-radius: 5px;
+            }
+            #contacttext {
+                color: white;
+                transition: 0.5s;
+                padding-top: 5px;
+                padding-right: 4px;
+                padding-left: 4px;
+                border-radius: 5px;
+            }
+            #contacttext:hover {
+                color: rgb(0, 0, 0);
+                background-color: white;
+            }
+
+            .home-icon:hover {
+                background-color: rgb(74, 74, 74);
             }
 
             .navtext-container.active {
                 display: flex;
-                opacity: 1;
-                transform: translateY(0); 
+                flex-direction: column;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                background-color: rgb(0, 0, 0);
+                width: 100%;
+                text-align: center;
+                gap: 0;
+                z-index: 1;
             }
-            
             .navtext-container.active a {
+                padding: 10px 0;
+                width: 100%;
+            }
+            .hamburg {
+                display: none;
+                color: white;
+            }
+            .main-container {
                 display: flex;
-                justify-content: end;
-                background-color: black;
+                flex-direction: column;
             }
 
-            #navtext {
-                border-radius: 0px;
-                padding-right: 70px;
+            .port-container {
+                display: flex;
+                margin-top: 80px;
+                background-color: none;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                scroll-margin-top: 80px;
+            }
+
+            .header img {
+                width: 300px;
+                position: relative;
+                overflow: hidden;
+                height: 450px;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+
+            .skill_issues {
+                background-color: black;
+                min-height: 60vh;
+                min-width: 100vw;
+                margin-top: 40px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: white;
+                flex-direction: column;
             }
             
-            .hamburg {
-                display: block;
-                transition: 0.5s;
-                padding: 25px;
+            .skill_container {
+                display: flex;
+                flex-direction: row;
+                gap: 70px;
+                margin-bottom: 50px;
+            }
+            .skill_container img{
+                width: 80px;
+                height: 80px;
+                object-fit: cover;
+                box-shadow: 5px 5px 5px gray;
                 border-radius: 5px;
+                margin-bottom: 20px;
+            }
+            .skill_container a {
+                display: flex;
+                font-size: 1em;
+                flex-direction: column;
+                align-items: center;
             }
 
-            .hamburg:hover {
-                background-color: rgb(74, 74, 74);
+            @media screen and (max-width: 740px) {
+                .skill_container img{
+                width: 60px;
+                height: 60px;
+                }
+                .skill_container a {
+                display: flex;
+                font-size: 0.8em;
+                flex-direction: column;
+                align-items: center;
+                }
+
+            }
+
+            @media screen and (max-width: 640px) {
+                .skill_container img{
+                    width: 60px;
+                    height: 60px;
+                }
+                .navtext-container {
+                    display: none;
+                    flex-direction: column;
+                    opacity: 0;
+                    transform: translateY(-20px); 
+                    transition: opacity 0.5s ease, transform 0.5s ease;
+                }
+
+                .navtext-container.active {
+                    display: flex;
+                    opacity: 1;
+                    transform: translateY(0); 
+                }
                 
+                .navtext-container.active a {
+                    display: flex;
+                    justify-content: end;
+                    background-color: black;
+                }
+
+                .header img {
+                    width: 50vw;
+                    height: 50vh;
+                    position: relative;
+                    overflow: hidden;
+                    object-fit: cover;
+                    z-index: -1;
+                    border-radius: 10px;
+                }
+
+                #navtext {
+                    border-radius: 0px;
+                    padding-right: 70px;
+                }
+
+                .header {
+                    font-size: 5vw;
+                }
+
+                .detail {
+                    font-size: 3vw;
+                }
+                
+                .hamburg {
+                    display: block;
+                    transition: 0.5s;
+                    padding: 25px;
+                    border-radius: 5px;
+                }
+
+                .hamburg:hover {
+                    background-color: rgb(74, 74, 74);
+                }
+            }
+            @media screen and (max-width: 440px) {
+                .header img {
+                    width: 50vw;
+                    height: 35vh;
+                    position: relative;
+                    overflow: hidden;
+                    object-fit: cover;
+                    z-index: -1;
+                    border-radius: 10px;
+                }
+            }
+
+            @media screen and (max-width: 320px) {
+                .skill_container img{
+                    width: 50px;
+                    height: 50px;
+                }
+
+                .skill_container {
+                    gap: 20px;
+            }
+
+            }
+
+            @media screen and (max-width: 240px) {
+                .header img {
+                    width: 60vw;
+                    height: 30vh;
+                    position: relative;
+                    overflow: hidden;
+                    object-fit: cover;
+                    z-index: -1;
+                    border-radius: 10px;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="navbar" id="navbar">
+                <a class="home-icon" href="https://www.google.co.th/">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+                <div class="hamburg" onclick="handleHamburger()">
+                    <i class="fa-solid fa-bars"></i>
+                </div>
+                <div class="navtext-container" id="nav-menu">
+                    <a id="navtext" href="#profile" onclick="handleHamburger()">Profile</a>
+                    <a id="navtext" href="#skills">Skills</a>
+                    <a id="navtext" href="#">Experience</a>
+                </div>
+            </div>
+
+            <div id="profile" class="port-container">
+                <div class="header">
+                    <h1 style="font-style: italic;">Pintalad</h1>
+                    <p>#funwithcodingsep2024</p>
+                    <img src="./assetn/myself.jpg">
+                </div>
+                <div class="detail">
+                    <h1 style="font-weight: bold;">Piyapol Intaladchum</h1>
+                    <p>2nd Year Student</p>
+                    <p>School of Information Technology KMITL</p>
+                    <div class="contact" id="contact">
+                        <a id="contacttext" href="https://www.instagram.com/net_piyapol/"><i class="fa-brands fa-instagram"></i></a>
+                        <a id="contacttext" href="https://www.facebook.com/piyapol.intaladchum"><i class="fa-brands fa-facebook"></i></a>
+                        <a id="contacttext" href="https://github.com/Nettaekrub"><i class="fa-brands fa-github"></i>(first)</a>
+                        <a id="contacttext" href="https://github.com/piyapol118"><i class="fa-brands fa-github"></i>(sec)</a>
+                        <a id="contacttext" href="mailto:66070118@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div id="skills" class="skill_issues">
+                <h1 class="text-shadow">SKILLS</h1>
+                <p class="text-shadow">Front-End</p>
+                <div class="skill_container">
+                    <a>
+                        <img src="https://static-00.iconduck.com/assets.00/javascript-js-icon-2048x2048-nyxvtvk0.png">
+                        <span>JavaScript</span>
+                    </a>
+                    <a>
+                        <img style="background-color: white;" src="https://cdn-icons-png.flaticon.com/512/732/732212.png">
+                        <span>HTML</span>
+                    </a>
+                    <a style="padding-left: 10px;">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSJDwBd9LoQzBAZigXXxzQ0kKn6TwyrE0Y7Rg&s">
+                        <span>CSS</span>
+                    </a>
+                </div>
+                <div class="skill_container">
+                    <a>
+                        <img src="https://res.cloudinary.com/arcjet-media/image/upload/v1608734952/z8hzeszc9eb3sp3vp3qc.jpg">
+                        <span>TailwindCSS</span>
+                    </a>
+                    <a style="margin-left: -8px;">
+                        <img src="https://cdn.iconscout.com/icon/free/png-256/free-react-logo-icon-download-in-svg-png-gif-file-formats--company-brand-world-logos-vol-4-pack-icons-282599.png?f=webp&w=256">
+                        <span>ReactJS</span>
+                    </a>
+                    <a style="padding-left: 10px;">
+                        <img style="background-color: white;" src="https://www.drupal.org/files/project-images/nextjs-icon-dark-background.png">
+                        <span>NextJS</span>
+                    </a>
+                </div>
+                <p class="text-shadow">Back-End</p>
+                <div class="skill_container">
+                    <a>
+                        <img style="background-color: white;" src="https://cdn.icon-icons.com/icons2/2699/PNG/512/expressjs_logo_icon_169185.png">
+                        <span>ExpreesJS</span>
+                    </a>
+                    <a>
+                        <img style="background-color: white;" src="https://cdn.iconscout.com/icon/free/png-256/free-node-js-logo-icon-download-in-svg-png-gif-file-formats--nodejs-programming-language-pack-logos-icons-1174925.png?f=webp&w=256">
+                        <span>NodeJS</span>
+                    </a>
+                    <a>
+                        <img style="background-color: white;" src="https://pngimg.com/d/mysql_PNG23.png">
+                        <span>MySQL</span>
+                    </a>
+                </div>
+                <div class="skill_container">
+                    <a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2ZYtHv2OLXmthRPbkmENZRXuqBVDwlsrZ1A&s">
+                        <span>MongoDB</span>
+                    </a>
+                    <a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmD38KsMgEwahtWc_Nfs5ZVktP9dBc36MUZA&s">
+                        <span>Flask</span>
+                    </a>
+                </div>
+                <p class="text-shadow">Other Languages</p>
+                <div class="skill_container">
+                    <a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS25oYJlp2wL_GAT2FOKBaOlCt1fbn56-hXDg&s">
+                        <span>C</span>
+                    </a>
+                    <a>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUmoRHovHXQ5JdGdOdt8fbfwIiHKB-ws3C-A&s">
+                        <span>Java</span>
+                    </a>
+                    <a>
+                        <img style="background-color: white;" src="https://i0.wp.com/junilearning.com/wp-content/uploads/2020/06/python-programming-language.webp?fit=1920%2C1920&ssl=1">
+                        <span>Python</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+        const menu = document.getElementById("nav-menu");
+        function handleHamburger() {
+            let screenWidth = window.innerWidth;
+            if (screenWidth <= 640) {
+                menu.classList.toggle("active");
             }
         }
-    </style>
-</head>
-<body>
-    <div class="navbar" id="navbar">
-        <a class="home-icon" href="https://www.google.co.th/">
-            <i class="fa-solid fa-house"></i>
-        </a>
-        <div class="hamburg" onclick="handleHamburger()">
-            <i class="fa-solid fa-bars"></i>
-        </div>
-        <div class="navtext-container" id="nav-menu">
-            <a id="navtext" href="#">Profile</a>
-            <a id="navtext" href="#">Skills</a>
-            <a id="navtext" href="#">About</a>
-            <a id="navtext" href="#">Contact</a>
-        </div>
-    </div>
-</body>
-<script>
-    const menu = document.getElementById("nav-menu");
-
-    function handleHamburger() {
-        let screenWidth = window.innerWidth;
-        if (screenWidth <= 640) {
-            menu.classList.toggle("active");
+        
+        function widthCheck() {
+            let screenWidth = window.innerWidth;
+            if (screenWidth > 640) {
+                menu.classList.remove("active");
+            }
         }
-    }
 
-    function widthCheck() {
-        let screenWidth = window.innerWidth;
-        if (screenWidth > 640) {
-            menu.classList.remove("active");
-        }
-    }
-    window.addEventListener('resize', widthCheck);
+        window.addEventListener('resize', widthCheck);
 
-    widthCheck();
-</script>
-</html>
+        widthCheck();
+    </script>
+    </html>
