@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://kit.fontawesome.com/64c9199a72.js" crossorigin="anonymous"></script>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        body {  
+            margin: 0;
+            min-height: 100vh;
+            min-width: 320px;
+            padding-bottom: 100px;
+            font-family: 'Courier New', Courier, monospace;
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: white;
+            background-image: url("./assetz/Black\ White\ Minimalist\ Boho\ Grid\ Background\ Page\ Border\ A4\ \(Landscape\)-3.png");
+        }
+        .navbar {
+            display: flex;
+            position: fixed;
+            align-items: center;
+            width: 100%;
+            height: 70px;
+            background-color: rgb(0, 0, 0);
+            justify-content: space-between;
+        }
+        .text-shadow {
+            color: white;
+            text-shadow: 5px 5px 8px rgba(217, 217, 217, 0.7);
+        }
+
+        #navtext {
+            display: flex;
+            align-self: center;
+            color: white;
+            font-size: 16px;
+            text-decoration: none;
+            transition: 0.5s;
+            padding: 26px;
+            border-radius: 5px;
+        }
+
+        #navtext:hover {
+            background-color: rgb(74, 74, 74);
+        }
+        .navtext-container {
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            padding-right: 30px;
+            height: 100%;
+        }
+
+        .home-icon {
+            line-height: 70px;
+            font-size: 20px;
+            color: white;
+            transition: 0.5s;
+            padding-left: 28px;
+            padding-right: 28px;
+            border-radius: 5px;
+        }
+        #contacttext {
+            color: white;
+            transition: 0.5s;
+            padding-top: 5px;
+            padding-right: 4px;
+            padding-left: 4px;
+            border-radius: 5px;
+        }
+        #contacttext:hover {
+            color: rgb(0, 0, 0);
+            background-color: white;
+        }
+
+        .home-icon:hover {
+            background-color: rgb(74, 74, 74);
+        }
+
+        .navtext-container.active {
+            display: flex;
+            flex-direction: column;
+            position: absolute;
+            top: 70px;
+            right: 0;
+            background-color: rgb(0, 0, 0);
+            width: 100%;
+            text-align: center;
+            gap: 0;
+            z-index: 1;
+        }
+        .navtext-container.active a {
+            padding: 10px 0;
+            width: 100%;
+        }
+        .hamburg {
+            display: none;
+            color: white;
+        }
+
+        .person-container {
+            display: flex;
+            align-items: center;
+            margin-top: 200px;
+            width: 60vw;
+            height: 50vh;
+            justify-content: cen;
+        }
+
+        .main-container {
+            display: flex;
+            flex-direction: column;
+        }
+
+
+        .img-frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 110px; 
+            margin-top: 15px;
+            height: 110px; 
+            border-radius: 50%;
+            overflow: hidden; 
+            background-color: white; 
+        }
+        .a-container-1 {
+            flex: 1; display: flex; justify-content: center; align-items: flex-start; height: 100%; object-fit: cover; background-color:rgb(255, 255, 255); border: 1px solid black; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        .a-container-2 {
+            flex: 1; display: flex; justify-content: center; align-items: flex-start; height: 100%; object-fit: cover; background-color:rgb(66, 65, 65); border: 1px solid black; border-radius: 0px 10px 10px 0px; box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            transition: 0.5s;
+        }
+
+        .a-container-1:hover {
+            background-color: rgb(151, 151, 151);
+        }
+
+        .a-container-2:hover {
+            background-color: rgb(146, 146, 146);
+        }
+        @media screen and (max-width: 640px) {
+            .skill_container img{
+                width: 60px;
+                height: 60px;
+            }
+            .navtext-container {
+                display: none;
+                flex-direction: column;
+                opacity: 0;
+                transform: translateY(-20px); 
+                transition: opacity 0.5s ease, transform 0.5s ease;
+            }
+
+            .navtext-container.active {
+                display: flex;
+                opacity: 1;
+                transform: translateY(0); 
+            }
+            
+            .navtext-container.active a {
+                display: flex;
+                justify-content: end;
+                background-color: black;
+            }
+
+            .header img {
+                width: 50vw;
+                height: 50vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+
+            #navtext {
+                border-radius: 0px;
+                padding-right: 70px;
+            }
+
+            .header {
+                font-size: 5vw;
+            }
+
+            .detail {
+                font-size: 3vw;
+            }
+            
+            .hamburg {
+                display: block;
+                transition: 0.5s;
+                padding: 25px;
+                border-radius: 5px;
+            }
+
+            .hamburg:hover {
+                background-color: rgb(74, 74, 74);
+            }
+        }
+        @media screen and (max-width: 440px) {
+            .header img {
+                width: 50vw;
+                height: 35vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+        }
+
+        @media screen and (max-width: 520px) {
+            .person-container {
+                width: 80vw;
+            }
+        }
+
+        @media screen and (max-width: 320px) {
+            .skill_container img{
+                width: 50px;
+                height: 50px;
+            }
+
+            .skill_container {
+                gap: 20px;
+        }
+
+        }
+
+        @media screen and (max-width: 240px) {
+            .header img {
+                width: 60vw;
+                height: 30vh;
+                position: relative;
+                overflow: hidden;
+                object-fit: cover;
+                z-index: -1;
+                border-radius: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="navbar" id="navbar">
+            <a class="home-icon" href="https://www.google.co.th/">
+                <i class="fa-solid fa-house"></i>
+            </a>
+            <div class="hamburg" onclick="handleHamburger()">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="navtext-container" id="nav-menu">
+                <a id="navtext" href="zen.html" onclick="handleHamburger()">Kokritne</a>
+                <a id="navtext" href="net.html">Pintalad</a>
+            </div>
+        </div>
+        <div style="display: flex; justify-content: center; align-items: center;">
+            <div class="person-container">
+                <a class="a-container-1" href="./zen.html">
+                    <div class="img-frame">
+                        <img style="width: 110px; object-fit: cover;" src="./assetz/profile.jpg">
+                    </div>
+                </a>
+                <a class="a-container-2" href="./Net.html">
+                    <div class="img-frame">
+                        <img style="margin-top:60px; width: 110px;" src="./assetn/myself.jpg">
+                    </div>
+                </a>
+            </div>
+        </div>
+        
+    </div>
+
+</body>
+<script>
+    const menu = document.getElementById("nav-menu");
+    function handleHamburger() {
+        let screenWidth = window.innerWidth;
+        if (screenWidth <= 640) {
+            menu.classList.toggle("active");
+        }
+    }
+    
+    function widthCheck() {
+        let screenWidth = window.innerWidth;
+        if (screenWidth > 640) {
+            menu.classList.remove("active");
+        }
+    }
+
+    window.addEventListener('resize', widthCheck);
+
+    widthCheck();
+</script>
+</html>
+
+<!-- <div class="contact" id="contact">
+    <a id="contacttext" href="https://www.instagram.com/net_piyapol/"><i class="fa-brands fa-instagram"></i></a>
+    <a id="contacttext" href="https://www.facebook.com/piyapol.intaladchum"><i class="fa-brands fa-facebook"></i></a>
+    <a id="contacttext" href="https://github.com/Nettaekrub"><i class="fa-brands fa-github"></i>(first)</a>
+    <a id="contacttext" href="https://github.com/piyapol118"><i class="fa-brands fa-github"></i>(sec)</a>
+    <a id="contacttext" href="mailto:66070118@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+</div> -->
