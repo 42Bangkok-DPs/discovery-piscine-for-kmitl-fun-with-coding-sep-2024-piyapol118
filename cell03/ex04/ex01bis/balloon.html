@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<style>
+    body {
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+            background-color: #f0f0f0; /* Optional: background color for better visibility */
+        }
+</style>
+</head>
+<body>
+        <div id="balloon" style="cursor:pointer; width: 200px; height: 200px; background-color: red; border-radius: 50%;">
+        </div>
+</body>
+<script>
+    $(document).ready(function() {
+        let currentColor = 'green';
+        const colors = ['red', 'green', 'blue'];
+
+        function balloonPumping() {
+            const balloon = $('#balloon');
+            
+            let nextColorIndex = (colors.indexOf(currentColor) + 1) % 3;
+            currentColor = colors[nextColorIndex];
+            balloon.css('background-color', currentColor);
+
+            let currentWidth = parseInt(balloon.css('width'));
+            let currentHeight = parseInt(balloon.css('height'));
+
+            if (currentHeight + 10 > 420) {
+                currentHeight -= 230;
+                currentWidth -= 230;
+            }
+
+            balloon.css({ 'width': (currentWidth + 10) + 'px','height': (currentHeight + 10) + 'px'});
+
+            console.log(currentHeight);
+        }
+
+        function balloonShrinking() {
+            const balloon = $('#balloon');
+
+            let nextColorIndex = (colors.indexOf(currentColor) + 2) % 3;
+            currentColor = colors[nextColorIndex];
+            balloon.css('background-color', currentColor);
+
+            let currentWidth = parseInt(balloon.css('width'));
+            let currentHeight = parseInt(balloon.css('height'));
+
+            if (currentHeight - 5 > 200) {
+                $balloon.css({'width': (currentWidth - 5) + 'px','height': (currentHeight - 5) + 'px'});
+            }
+        }
+
+        $('#balloon').on('click', balloonPumping);
+        $('#balloon').on('mouseout', balloonShrinking);
+    });
+</script>
+</html>

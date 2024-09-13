@@ -232,6 +232,10 @@
             border-radius: 50%;
             transition: 0.5s;
         }
+        #Projects {
+            scroll-margin-top: 80px;
+
+        }
 
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.7);
@@ -398,8 +402,8 @@
                 </div>
                 <div class="navtext-container" id="nav-menu">
                     <a id="navtext" href="#profile" onclick="handleHamburger()">Profile</a>
-                    <a id="navtext" href="#skills">Skills</a>
-                    <a id="navtext" href="#">Experience</a>
+                    <a id="navtext" href="#skills" onclick="handleHamburger()">Skills</a>
+                    <a id="navtext" href="#Projects" onclick="handleHamburger()">Projects</a>
                 </div>
             </div>
 
@@ -494,9 +498,9 @@
                     </a>
                 </div>
             </div>
-            <div class="port-container">
+            <div id="Projects" class="port-container">
                 <div class="header">
-                    <h1 style="font-style: italic;">Experience</h1>
+                    <h1 style="font-style: italic;">Projects</h1>
                 </div>
                 <div id="carou_1" data-current-index="0"  class="carousel-container">
                     <div class="carousel-slides" id="carouselSlides">
@@ -517,7 +521,7 @@
                 </div>
                 <div class="description" style="padding-bottom: 20px;">
                     <h1 class="text-shadow">N-Queue</h1>
-                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>N-Queue</strong> is an application designed for managing lab checking reservations, aimed at reducing the time required for lab checking, which involves many processes. This project was developed by my team and me, and I worked in the role of a <strong>fullstack developer</strong>. We used Java for both the front-end and back-end, and we used MySQL as the database, and this project got a <strong>Best project</strong> and <strong>Best Presentation Award</strong> from professor too.</p>
+                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>N-Queue</strong> is an application designed for managing lab checking reservations, aimed at reducing the time required for lab checking, which involves many processes. This project was developed by my team and me, and I worked in the role of a <strong>Fullstack developer</strong>. We used Java for both the front-end and back-end, and we used MySQL as the database, and this project got a <strong>Best project</strong> and <strong>Best Presentation Award</strong> from professor too.</p>
                 </div>
             </div>
             <div class="port-container">
