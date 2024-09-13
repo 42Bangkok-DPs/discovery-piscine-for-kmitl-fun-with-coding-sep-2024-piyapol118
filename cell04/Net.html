@@ -27,6 +27,7 @@
                 display: flex;
                 position: fixed;
                 align-items: center;
+                z-index: 1;
                 width: 100%;
                 height: 70px;
                 background-color: rgb(0, 0, 0);
@@ -169,6 +170,73 @@
                 align-items: center;
             }
 
+        .carousel-container {
+            width: 60vw;
+            display: flex;
+            height: 60vh;
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px 10px 0px 0px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .description {
+            width: 60vw;
+            display: flex;
+            flex-direction: column;
+            height: 30vh;
+            font-size: 1em;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            border-radius: 0px 0px 10px 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgb(75, 75, 75);
+        }
+
+        .carousel-slides {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            transition: opacity 1s;
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .carousel-buttons {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+
+        .prev, .next {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            padding-left: 12px;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding-right: 12px;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 0.5s;
+        }
+
+        .prev:hover, .next:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+
             @media screen and (max-width: 740px) {
                 .skill_container img{
                 width: 60px;
@@ -182,8 +250,37 @@
                 }
 
             }
+            @media screen and (max-width: 1020px) {
+                .carousel-container {
+                    width: 80vw;
+                    height: 60vh;
+                }
+                .description {
+                    width: 80vw;
+                    padding-bottom: 20px;
+                }
+            }
+
+            @media screen and (max-width: 840px) {
+                .carousel-container {
+                    width: 80vw;
+                    height: 50vh;
+                }
+            }
 
             @media screen and (max-width: 640px) {
+                .carousel-container {
+                    width: 80vw;
+                    height: 40vh;
+                }
+
+                .description {
+                    padding-top: 10px;
+                    padding-bottom: 10px;
+                    font-size: 0.9em;
+                    margin-left: 10px;
+                    margin-right: 10px;
+                }
                 .skill_container img{
                     width: 60px;
                     height: 60px;
@@ -264,6 +361,17 @@
                     gap: 20px;
             }
 
+            }
+
+            @media screen and (max-width: 520px) {
+                .carousel-container {
+                    width: 80vw;
+                    height: 20vh;
+                }
+                .description {
+                    font-size: 0.7em;
+                    height: 26vh;
+                }
             }
 
             @media screen and (max-width: 240px) {
@@ -386,23 +494,53 @@
                     </a>
                 </div>
             </div>
-            <div id="profile" class="port-container">
+            <div class="port-container">
                 <div class="header">
-                    <h1 style="font-style: italic;">Pintalad</h1>
-                    <p>#funwithcodingsep2024</p>
-                    <img src="./assetn/myself.jpg">
+                    <h1 style="font-style: italic;">Experience</h1>
                 </div>
-                <div class="detail">
-                    <h1 style="font-weight: bold;">Piyapol Intaladchum</h1>
-                    <p>2nd Year Student</p>
-                    <p>School of Information Technology KMITL</p>
-                    <div class="contact" id="contact">
-                        <a id="contacttext" href="https://www.instagram.com/net_piyapol/"><i class="fa-brands fa-instagram"></i></a>
-                        <a id="contacttext" href="https://www.facebook.com/piyapol.intaladchum"><i class="fa-brands fa-facebook"></i></a>
-                        <a id="contacttext" href="https://github.com/Nettaekrub"><i class="fa-brands fa-github"></i>(first)</a>
-                        <a id="contacttext" href="https://github.com/piyapol118"><i class="fa-brands fa-github"></i>(sec)</a>
-                        <a id="contacttext" href="mailto:66070118@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+                <div id="carou_1" data-current-index="0"  class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <div class="carousel-slide">
+                            <img src="./assetn/n-queue.png" alt="Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetn/Screenshot 2567-09-13 at 13.53.23.png" alt="Image 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetn/Screenshot 2567-09-13 at 14.11.06.png" alt="Image 3">
+                        </div>
                     </div>
+                    <div class="carousel-buttons">
+                        <button class="prev" onclick="moveSlide('carou_1',-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('carou_1',1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="description" style="padding-bottom: 20px;">
+                    <h1 class="text-shadow">N-Queue</h1>
+                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>N-Queue</strong> is an application designed for managing lab checking reservations, aimed at reducing the time required for lab checking, which involves many processes. This project was developed by my team and me, and I worked in the role of a <strong>fullstack developer</strong>. We used Java for both the front-end and back-end, and we used MySQL as the database, and this project got a <strong>Best project</strong> and <strong>Best Presentation Award</strong> from professor too.</p>
+                </div>
+            </div>
+            <div class="port-container">
+                <div id="carou_2" data-current-index="0" class="carousel-container">
+                    <div class="carousel-slides" id="carouselSlides">
+                        <div class="carousel-slide">
+                            <img src="./assetn/winsport.png" alt="Image 1">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetn/Screenshot 2567-09-13 at 15.45.22.png" alt="Image 2">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="./assetn/Screenshot 2567-09-13 at 15.46.05.png" alt="Image 3">
+                        </div>
+                    </div>
+                    <div class="carousel-buttons">
+                        <button class="prev" onclick="moveSlide('carou_2',-1)">&#10094;</button>
+                        <button class="next" onclick="moveSlide('carou_2', 1)">&#10095;</button>
+                    </div>
+                </div>
+                <div class="description">
+                    <h1 class="text-shadow">Winsport</h1>
+                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>Winsport</strong> is a web application developed to provide convenience for motorcycle taxi users around KMITL. It gathers information about the various motorcycle taxi stands located around the KMITL area. For this project, I worked in the role of <strong>FullStack developer</strong> role, utilizing HTML and CSS for the frontend, Python for the backend, and using the Flask framework to manage the backend system.</p>
                 </div>
             </div>
         </div>
@@ -424,6 +562,37 @@
         }
 
         window.addEventListener('resize', widthCheck);
+
+        function showSlide(carouselID,index) {
+            const carousel = document.getElementById(carouselID);
+            const slides = carousel .querySelectorAll('.carousel-slide');
+            const totalSlides = slides.length;
+
+            let currentIndex = parseInt(carousel.dataset.currentIndex || '0', 10);
+
+            if (index >= totalSlides) {
+                currentIndex = 0;
+            } else if (index < 0) {
+                currentIndex = totalSlides - 1;
+            } else {
+                currentIndex = index;
+            }
+
+            const offset = -currentIndex * 100;
+            carousel.querySelector('.carousel-slides').style.transform = `translateX(${offset}%)`;
+
+            carousel.dataset.currentIndex = currentIndex;
+        }
+
+        function moveSlide(carouselID, step) {
+            const carousel = document.getElementById(carouselID);
+            let currentIndex = parseInt(carousel.dataset.currentIndex || '0', 10);
+            showSlide(carouselID ,currentIndex + step);
+        }
+        showSlide('carou_1', 0);
+        showSlide('carou_2', 0);
+
+        
 
         widthCheck();
     </script>
