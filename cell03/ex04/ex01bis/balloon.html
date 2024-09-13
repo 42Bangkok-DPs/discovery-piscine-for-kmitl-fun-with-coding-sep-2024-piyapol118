@@ -21,8 +21,7 @@
         </div>
 </body>
 <script>
-    $(document).ready(function() {
-        let currentColor = 'green';
+     let currentColor = 'green';
         const colors = ['red', 'green', 'blue'];
 
         function balloonPumping() {
@@ -56,10 +55,10 @@
             let currentHeight = parseInt(balloon.css('height'));
 
             if (currentHeight - 5 > 200) {
-                $balloon.css({'width': (currentWidth - 5) + 'px','height': (currentHeight - 5) + 'px'});
+                balloon.css({'width': (currentWidth - 5) + 'px','height': (currentHeight - 5) + 'px'});
             }
         }
-
+    $(document).ready(function() {
         $('#balloon').on('click', balloonPumping);
         $('#balloon').on('mouseout', balloonShrinking);
     });
