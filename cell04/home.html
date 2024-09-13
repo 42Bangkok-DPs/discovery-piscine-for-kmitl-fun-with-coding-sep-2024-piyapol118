@@ -69,7 +69,7 @@
             border-radius: 5px;
         }
         #contacttext {
-            color: white;
+            color: rgb(0, 0, 0);
             transition: 0.5s;
             padding-top: 5px;
             padding-right: 4px;
@@ -77,6 +77,18 @@
             border-radius: 5px;
         }
         #contacttext:hover {
+            color: rgb(0, 0, 0);
+            background-color: white;
+        }
+        #contacttext-1 {
+            color: rgb(255, 255, 255);
+            transition: 0.5s;
+            padding-top: 5px;
+            padding-right: 4px;
+            padding-left: 4px;
+            border-radius: 5px;
+        }
+        #contacttext-1:hover {
             color: rgb(0, 0, 0);
             background-color: white;
         }
@@ -120,7 +132,6 @@
             flex-direction: column;
         }
 
-
         .img-frame {
             display: flex;
             justify-content: center;
@@ -133,12 +144,12 @@
             background-color: white; 
         }
         .a-container-1 {
-            flex: 1; display: flex; justify-content: center; align-items: flex-start; height: 100%; object-fit: cover; background-color:rgb(255, 255, 255); border: 1px solid black; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            flex: 1; flex-direction: column; display: flex; justify-content: center; align-items: center; height: 100%; object-fit: cover; background-color:rgb(255, 255, 255); border: 1px solid black; border-radius: 10px 0px 0px 10px; box-shadow: 0px 0px 10px rgb(0, 0, 0); color: black;
             transition: 0.5s;
         }
 
         .a-container-2 {
-            flex: 1; display: flex; justify-content: center; align-items: flex-start; height: 100%; object-fit: cover; background-color:rgb(66, 65, 65); border: 1px solid black; border-radius: 0px 10px 10px 0px; box-shadow: 0px 0px 10px rgb(0, 0, 0);
+            flex: 1; flex-direction: column; display: flex; justify-content: center; align-items: center; height: 100%; object-fit: cover; background-color:rgb(66, 65, 65); border: 1px solid black; border-radius: 0px 10px 10px 0px; box-shadow: 0px 0px 10px rgb(0, 0, 0);
             transition: 0.5s;
         }
 
@@ -254,7 +265,7 @@
 <body>
     <div class="main-container">
         <div class="navbar" id="navbar">
-            <a class="home-icon" href="https://www.google.co.th/">
+            <a class="home-icon" href="./home.html">
                 <i class="fa-solid fa-house"></i>
             </a>
             <div class="hamburg" onclick="handleHamburger()">
@@ -268,16 +279,35 @@
         </div>
         <div style="display: flex; justify-content: center; align-items: center;">
             <div class="person-container">
-                <a class="a-container-1" href="./zen.html">
-                    <div class="img-frame">
-                        <img style="width: 110px; object-fit: cover;" src="./assetz/profile.jpg">
+                    <div class="a-container-1">
+                        <a style="color: black; text-decoration: none;" href="./zen.html">
+                        <div class="img-frame">
+                            <img style="width: 110px; object-fit: cover;" src="./assetz/profile.jpg">
+                        </div>
+                        <p style="color: black; font-style: italic; margin-left: 15px; ">kokritne</p>
+                        </a>
+                        <div class="contact" id="contact">
+                            <a id="contacttext" href="https://www.instagram.com/zenkoub/"><i class="fa-brands fa-instagram"></i></a>
+                            <a id="contacttext" href="https://www.facebook.com/profile.php?id=100006579403577"><i class="fa-brands fa-facebook"></i></a>
+                            <a id="contacttext" href="https://github.com/zenkoub"><i class="fa-brands fa-github"></i></a>
+                            <a id="contacttext" href="mailto:66070024@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
+                        </div>
                     </div>
-                </a>
-                <a class="a-container-2" href="./Net.html">
-                    <div class="img-frame">
-                        <img style="margin-top:60px; width: 110px;" src="./assetn/myself.jpg">
+                <div class="a-container-2" href="./Net.html">
+                    <a style="color: black; text-decoration: none;" href="./Net.html">
+                        <div class="img-frame">
+                            <img style="margin-top:60px; width: 110px;" src="./assetn/myself.jpg">
+                        </div>
+                    <p style="color: rgb(255, 255, 255); font-style: italic; margin-left: 15px; ">Pintalad</p>
+                    </a>
+                    <div class="contact" id="contact">
+                        <a id="contacttext-1" href="https://www.instagram.com/net_piyapol/"><i class="fa-brands fa-instagram"></i></a>
+                        <a id="contacttext-1" href="https://www.facebook.com/piyapol.intaladchum"><i class="fa-brands fa-facebook"></i></a>
+                        <a id="contacttext-1" href="https://github.com/Nettaekrub"><i class="fa-brands fa-github"></i></a>
+                        <a id="contacttext-1" href="https://github.com/piyapol118"><i class="fa-brands fa-github"></i></a>
+                        <a id="contacttext-1" href="mailto:66070118@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
                     </div>
-                </a>
+                </div>
             </div>
         </div>
         
@@ -305,11 +335,3 @@
     widthCheck();
 </script>
 </html>
-
-<!-- <div class="contact" id="contact">
-    <a id="contacttext" href="https://www.instagram.com/net_piyapol/"><i class="fa-brands fa-instagram"></i></a>
-    <a id="contacttext" href="https://www.facebook.com/piyapol.intaladchum"><i class="fa-brands fa-facebook"></i></a>
-    <a id="contacttext" href="https://github.com/Nettaekrub"><i class="fa-brands fa-github"></i>(first)</a>
-    <a id="contacttext" href="https://github.com/piyapol118"><i class="fa-brands fa-github"></i>(sec)</a>
-    <a id="contacttext" href="mailto:66070118@kmitl.ac.th"><i class="fa-solid fa-at"></i></a>
-</div> -->

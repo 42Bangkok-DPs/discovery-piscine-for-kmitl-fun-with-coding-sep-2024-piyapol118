@@ -14,7 +14,6 @@
                 margin: 0;
                 min-height: 200vh;
                 min-width: 320px;
-                padding-bottom: 100px;
                 font-family: 'Courier New', Courier, monospace;
                 background-attachment: fixed;
                 background-position: center;
@@ -45,8 +44,7 @@
                 font-size: 16px;
                 text-decoration: none;
                 transition: 0.5s;
-                padding: 26px;
-                border-radius: 5px;
+                padding: 25px;
             }
 
             #navtext:hover {
@@ -67,7 +65,6 @@
                 transition: 0.5s;
                 padding-left: 28px;
                 padding-right: 28px;
-                border-radius: 5px;
             }
             #contacttext {
                 color: white;
@@ -184,7 +181,6 @@
             width: 60vw;
             display: flex;
             flex-direction: column;
-            height: 30vh;
             font-size: 1em;
             justify-content: center;
             align-items: center;
@@ -236,6 +232,46 @@
             scroll-margin-top: 80px;
 
         }
+        .contact-bar {
+            position: relative;
+            width: 100%;
+            display: flex;
+            margin-top: 80px;
+            padding-bottom: 30px;
+            background-color: rgb(30, 30, 30);
+            color: white;
+            display: flex;
+            justify-content: left;
+            box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.2);
+            z-index: 10;
+        }
+        
+        .contact-container {
+            display: flex;
+            flex-direction: column;
+            align-items:left;
+            text-align: left;
+            gap: 7px;
+            padding-top: 15px;
+            padding-left: 40px;
+        }
+        
+        .contact-item {
+            margin: 5px 0; 
+        }
+        
+        .contact-item i {
+            margin-right: 8px;
+        }
+        
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+        }
+        
+        .contact-item a:hover {
+            text-decoration: underline;
+        }
 
         .prev:hover, .next:hover {
             background-color: rgba(0, 0, 0, 0.7);
@@ -276,6 +312,10 @@
                 .carousel-container {
                     width: 80vw;
                     height: 40vh;
+                }
+
+                .header-2 {
+                    font-size: 0.75em;
                 }
 
                 .description {
@@ -404,6 +444,7 @@
                     <a id="navtext" href="#profile" onclick="handleHamburger()">Profile</a>
                     <a id="navtext" href="#skills" onclick="handleHamburger()">Skills</a>
                     <a id="navtext" href="#Projects" onclick="handleHamburger()">Experience</a>
+                    <a id="navtext" href="#contact-bar" onclick="handleHamburger()">Contact</a>
                 </div>
             </div>
 
@@ -499,8 +540,8 @@
                 </div>
             </div>
             <div id="Projects" class="port-container">
-                <div class="header">
-                    <h1 style="font-style: italic;">Experience</h1>
+                <div class="header-2">
+                    <h1 style="font-style: italic;">Experience & Projects</h1>
                 </div>
                 <div id="carou_1" data-current-index="0"  class="carousel-container">
                     <div class="carousel-slides" id="carouselSlides">
@@ -521,7 +562,7 @@
                 </div>
                 <div class="description" style="padding-bottom: 20px;">
                     <h1 class="text-shadow">N-Queue</h1>
-                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>N-Queue</strong> is an application designed for managing lab checking reservations, aimed at reducing the time required for lab checking, which involves many processes. This project was developed by my team and me, and I worked in the role of a <strong>Fullstack developer</strong>. We used Java for both the front-end and back-end, and we used MySQL as the database, and this project got a <strong>Best project</strong> and <strong>Best Presentation Award</strong> from professor too.</p>
+                    <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>N-Queue</strong> is an application designed for managing lab checking reservations, aimed at reducing the time required for lab checking, which involves many processes. This project was developed by my team and me, and I worked in the role of a <strong>Fullstack developer</strong>. We used Java for both the front-end and back-end, and we used MySQL as the database, and this project got a <strong>Best project</strong> and <strong>Best Presentation Award</strong> from the professor too.</p>
                 </div>
             </div>
             <div class="port-container">
@@ -545,6 +586,30 @@
                 <div class="description">
                     <h1 class="text-shadow">Winsport</h1>
                     <p style="margin-left: 20px; margin-right: 20px; margin-top: 0px;">&emsp; <strong>Winsport</strong> is a web application developed to provide convenience for motorcycle taxi users around KMITL. It gathers information about the various motorcycle taxi stands located around the KMITL area. For this project, I worked in the role of <strong>FullStack developer</strong> role, utilizing HTML and CSS for the frontend, Python for the backend, and using the Flask framework to manage the backend system.</p>
+                </div>
+            </div>
+            <div class="contact-bar" id="contact-bar">
+                <div class="contact-container">
+                    <div class="contact-item">
+                        <i class="fa-brands fa-instagram"></i>
+                        <a href="https://www.instagram.com/net_piyapol/">net_piyapol</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-facebook"></i>
+                        <a href="https://www.facebook.com/piyapol.intaladchum">Piyapol Intaladchum</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/Nettaekrub">Nettaekrub</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <a href="https://github.com/piyapol118">piyapol118</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fa-solid fa-at"></i>
+                        <a href="mailto:66070118@kmitl.ac.th">66070118@kmitl.ac.th</a>
+                    </div>
                 </div>
             </div>
         </div>
